@@ -42,12 +42,13 @@ public class SomethingTypeRepositoryTest {
         Assert.assertTrue(repository.count() == 5); // See src/main/resources/data.sql
     }
     
-    // Check src/main/resources/data.sql if there is a problem with this test. 
+    // Check src/test/resources/data.sql if there is a problem with this test. 
     @Test
     public void findByIdTest() {
         System.out.println("findById");
+        
         long findId = 1;
-        String expectedName = "Some name";
+        String expectedName = "Some type";
         
         Optional<SomethingType> sto = repository.findById(findId);
         if (sto.isPresent()) {
@@ -58,12 +59,12 @@ public class SomethingTypeRepositoryTest {
         }
     }
     
-    // Check src/main/resources/data.sql if there is a problem with this test.
+    // Check src/test/resources/data.sql if there is a problem with this test.
     @Test
     public void findByNameTest() {
         System.out.println("findByName");
         
-        String searchedName = "Some name again";
+        String searchedName = "Some type again";
         int expectedSizeList = 2;
         long expectedId0 = 3;
         long expectedId1 = 5;
@@ -108,7 +109,7 @@ public class SomethingTypeRepositoryTest {
             SomethingType st = ost.get();
             st.setName(newName);
         } else {
-            Assert.fail("This test is supposed to find an element [1].");
+            Assert.fail("This test is supposed to find an element [:1].");
         }
         
         // Now search the same ID again, then check modification is done
@@ -117,7 +118,7 @@ public class SomethingTypeRepositoryTest {
             SomethingType st = ost.get();
             Assert.assertEquals(newName, st.getName());
         } else {
-            Assert.fail("This test is supposed to find an element [2].");
+            Assert.fail("This test is supposed to find an element [:2].");
         }
     }
     
@@ -125,7 +126,8 @@ public class SomethingTypeRepositoryTest {
     public void deleteTest() {
         System.out.println("delete");
         
-        long searchedId = 1;
+        long searchedId = 5;
+        
         Optional<SomethingType> ost = repository.findById(searchedId);
         if (ost.isPresent()) {
             SomethingType st = ost.get();
