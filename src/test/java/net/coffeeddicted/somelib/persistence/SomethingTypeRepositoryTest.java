@@ -2,9 +2,6 @@
 package net.coffeeddicted.somelib.persistence;
 
 import java.util.List;
-import net.coffeeddicted.somelib.SomelibService;
-import net.coffeeddicted.somelib.domain.something.SomethingType;
-
 import java.util.Optional;
 import org.junit.Assert;
 import org.junit.Before;
@@ -15,6 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import net.coffeeddicted.somelib.SomelibService;
+import net.coffeeddicted.somelib.domain.something.SomethingType;
 
 /**
  * This test class is (obviously) for SomethingTypeRepository.
