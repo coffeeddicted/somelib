@@ -14,7 +14,8 @@ import org.springframework.stereotype.Service;
 @EnableAutoConfiguration
 public class SomelibService {
     
-    public void createSomethingType(SomethingType somethingType) {
+    public SomethingType createSomethingType() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
+    
 }
