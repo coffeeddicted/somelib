@@ -1,4 +1,4 @@
-// Copyright Coffeeddicted 2018
+// Copyright 2018, Coffeeddicted
 package net.coffeeddicted.somelib.persistence;
 
 import java.util.List;
@@ -34,7 +34,7 @@ public class SomethingTypeRepositoryTest {
     
     @BeforeClass
     public static void uselessMethod() {
-        System.out.println("[somelib] : This message is useless. Nonetheless it provides an example of @BeforeClass.");
+        System.out.println("SOMELIB / SomethingTypeRepositoryTest");
     }
     
     @Before
@@ -45,7 +45,7 @@ public class SomethingTypeRepositoryTest {
     // Check src/test/resources/data.sql if there is a problem with this test. 
     @Test
     public void findByIdTest() {
-        System.out.println("findById");
+        System.out.println("SOMELIB / SomethingTypeRepositoryTest : findById");
         
         long findId = 1;
         String expectedName = "Some type";
@@ -62,7 +62,7 @@ public class SomethingTypeRepositoryTest {
     // Check src/test/resources/data.sql if there is a problem with this test.
     @Test
     public void findByNameTest() {
-        System.out.println("findByName");
+        System.out.println("SOMELIB / SomethingTypeRepositoryTest : findByName");
         
         String searchedName = "Some type again";
         int expectedSizeList = 2;
@@ -83,7 +83,7 @@ public class SomethingTypeRepositoryTest {
     
     @Test
     public void persistTest() {
-        System.out.println("persist");
+        System.out.println("SOMELIB / SomethingTypeRepositoryTest : persist");
         
         SomethingType st1 = new SomethingType("Machin truc");
         
@@ -98,7 +98,7 @@ public class SomethingTypeRepositoryTest {
     
     @Test
     public void updateTest() {
-        System.out.println("update");
+        System.out.println("SOMELIB / SomethingTypeRepositoryTest : update");
         
         long searchedId = 2;
         String newName = "Machin bidule génial";
@@ -124,7 +124,7 @@ public class SomethingTypeRepositoryTest {
     
     @Test
     public void deleteTest() {
-        System.out.println("delete");
+        System.out.println("SOMELIB / SomethingTypeRepositoryTest : delete");
         
         long searchedId = 5;
         

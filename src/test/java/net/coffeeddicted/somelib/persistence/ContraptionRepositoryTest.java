@@ -1,4 +1,4 @@
-// Copyright Coffeeddicted 2018
+// Copyright 2018, Coffeeddicted
 package net.coffeeddicted.somelib.persistence;
 
 import net.coffeeddicted.somelib.SomelibService;
@@ -29,12 +29,13 @@ public class ContraptionRepositoryTest {
     
     @Before
     public void checkDbInitializationTest() {
+        System.out.println("SOMELIB / ContraptionRepositoryTest");
         Assert.assertTrue(contraptionRepository.count() == 5);
     }
     
     @Test
     public void findByNameTest() {
-        System.out.println("findByName");
+        System.out.println("SOMELIB / ContraptionRepositoryTest : findByName");
         
         // Test parameters
         String sName = "Contraption 1";
@@ -48,7 +49,7 @@ public class ContraptionRepositoryTest {
     
     @Test
     public void findByNameContainingTest() {
-        System.out.println("findByNameContaining");
+        System.out.println("SOMELIB / ContraptionRepositoryTest : findByNameContaining");
         
         // Test parameters
         String content = "trapt";
@@ -60,7 +61,7 @@ public class ContraptionRepositoryTest {
     
     @Test
     public void findByExpirationDateBeforeTest() {
-        System.out.println("findByExpirationDateBefore");
+        System.out.println("SOMELIB / ContraptionRepositoryTest : findByExpirationDateBefore");
         
         // Test parameters
         Date testDate = new Date(2017, 1, 1);

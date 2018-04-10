@@ -1,4 +1,4 @@
-// Copyright Coffeeddicted 2018
+// Copyright 2018, Coffeeddicted
 package net.coffeeddicted.somelib.domain.something;
 
 import java.io.Serializable;

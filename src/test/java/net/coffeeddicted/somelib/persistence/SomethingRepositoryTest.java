@@ -1,4 +1,4 @@
-// Copyright Coffeeddicted 2018
+// Copyright 2018, Coffeeddicted
 package net.coffeeddicted.somelib.persistence;
 
 import java.util.List;
@@ -33,12 +33,13 @@ public class SomethingRepositoryTest {
     
     @Before
     public void checkDbInitializationTest() {
+        System.out.println("SOMELIB / SomethingRepositoryTest");
         Assert.assertTrue(somethingRepository.count() == 10);
     }
     
     @Test
     public void findByNameTest() {
-        System.out.println("findByName");
+        System.out.println("SOMELIB / SomethingRepositoryTest : findByName");
         
         String sName = "Something 2";
         int expSize = 1;
@@ -50,7 +51,7 @@ public class SomethingRepositoryTest {
     
     @Test
     public void findByPrimarySomethingTypeTest() {
-        System.out.println("findByPrimarySomethingType");
+        System.out.println("SOMELIB / SomethingRepositoryTest : findByPrimarySomethingType");
          
         long typeId = 1;
         int expSize = 4;
@@ -66,7 +67,7 @@ public class SomethingRepositoryTest {
      
     @Test
     public void findBySecondarySomethingTypeTest() {
-        System.out.println("findBySecondarySomethingType");
+        System.out.println("SOMELIB / SomethingRepositoryTest : findBySecondarySomethingType");
         
         long typeId = 1;
         int expSize = 3;
@@ -82,7 +83,7 @@ public class SomethingRepositoryTest {
      
     @Test
     public void findByPrimarySomethingTypeAndSecondarySomethingTypeTest() {
-        System.out.println("findByPrimarySomethingTypeAndSecondarySomethingType");
+        System.out.println("SOMELIB / SomethingRepositoryTest : findByPrimarySomethingTypeAndSecondarySomethingType");
          
         long typId1 = 4;
         long typId2 = 1;
@@ -103,7 +104,7 @@ public class SomethingRepositoryTest {
     
     @Test
     public void findByPrimarySomethingTypeOrSecondarySomethingTypeTest() {
-        System.out.println("findByPrimarySomethingTypeOrSecondarySomethingType");
+        System.out.println("SOMELIB / SomethingRepositoryTest : findByPrimarySomethingTypeOrSecondarySomethingType");
          
         long typId1 = 4;
         long typId2 = 1;
@@ -124,7 +125,7 @@ public class SomethingRepositoryTest {
     
     @Test
     public void findBySecondarySomethingTypeIsNullTest() {
-        System.out.println("findBySecondarySomethingTypeIsNull");
+        System.out.println("SOMELIB / SomethingRepositoryTest : findBySecondarySomethingTypeIsNull");
         
         long[] expIds = {2, 5};
         
@@ -132,8 +133,6 @@ public class SomethingRepositoryTest {
         Assert.assertTrue(ls.size() == expIds.length);
         for (int i = 0; i < expIds.length; i++) {
             Assert.assertTrue(ls.get(i).getId() == expIds[i]);
-        }
-        
+        }  
     }
-    
 }

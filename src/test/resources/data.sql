@@ -49,8 +49,8 @@ INSERT INTO SOMETHING VALUES (SEQ_SOMETHING.currval, 'Something 10', 4, 2); -- 1
 /*
  * Class Contraption
  * Table CONTRAPTION [ ID, NAME, SOME_DATE, EXPIRATION_DATE, ELEMENTARY ]
- * Nota : OneToMany relationship is stored outside of the table representing
- *        the container class.
+ * Table CONTRAPTION_COMPOSITION [ CONTRAPTION_ID, COMPOSITION_ID ]
+ *
  * Nota : Hibernate generates schema ordering columns alaphabetically, so
  *        it's better to use the extended INSERT notation (with column names).
  */
@@ -69,3 +69,23 @@ INSERT INTO SOMETHING VALUES (SEQ_SOMETHING.currval, 'Something 10', 4, 2); -- 1
  SELECT SEQ_CONTRAPTION.nextval FROM DUAL;
  INSERT INTO CONTRAPTION (ID, NAME, SOME_DATE, EXPIRATION_DATE, ELEMENTARY)
  VALUES (SEQ_CONTRAPTION.currval, 'Contraption 5', PARSEDATETIME('2015-03-23', 'yyyy-MM-dd'), PARSEDATETIME('2016-06-23', 'yyyy-MM-dd'), FALSE); -- 5
+
+
+ /*
+  * Class Tag
+  * Table TAG [ ID, NAME ]
+  * Table TAG_LINKED_TAGS [ TAG_ID, LINKED_TAGS_ID ]
+  */
+SELECT SEQ_TAG.nextval FROM DUAL;
+INSERT INTO TAG (ID, NAME)
+  VALUES (SEQ_TAG.currval, 'Tag 1'); -- 1
+SELECT SEQ_TAG.nextval FROM DUAL;
+INSERT INTO TAG (ID, NAME)
+  VALUES (SEQ_TAG.currval, 'Tag 2'); -- 2
+SELECT SEQ_TAG.nextval FROM DUAL;
+INSERT INTO TAG (ID, NAME)
+  VALUES (SEQ_TAG.currval, 'Tag 3'); -- 3
+
+INSERT INTO TAG_LINKED_TAGS (TAG_ID, LINKED_TAGS_ID) VALUES (1, 2);
+INSERT INTO TAG_LINKED_TAGS (TAG_ID, LINKED_TAGS_ID) VALUES (1, 3);
+INSERT INTO TAG_LINKED_TAGS (TAG_ID, LINKED_TAGS_ID) VALUES (2, 3);
